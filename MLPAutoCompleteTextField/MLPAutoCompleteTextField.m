@@ -498,7 +498,9 @@ withAutoCompleteString:(NSString *)string
     [self resetKeyboardAutoCompleteTableFrameForNumberOfRows:self.maximumNumberOfAutoCompleteRows];
     [self.autoCompleteTableView setContentInset:UIEdgeInsetsZero];
     [self.autoCompleteTableView setScrollIndicatorInsets:UIEdgeInsetsZero];
+#if !TARGET_OS_VISION
     [self setInputAccessoryView:self.autoCompleteTableView];
+#endif
 }
 
 - (void)setAutoCompleteTableForDropDownAppearance
@@ -506,7 +508,9 @@ withAutoCompleteString:(NSString *)string
     [self resetDropDownAutoCompleteTableFrameForNumberOfRows:self.maximumNumberOfAutoCompleteRows];
     [self.autoCompleteTableView setContentInset:self.autoCompleteContentInsets];
     [self.autoCompleteTableView setScrollIndicatorInsets:self.autoCompleteScrollIndicatorInsets];
+#if !TARGET_OS_VISION
     [self setInputAccessoryView:nil];
+#endif
 }
 
 
